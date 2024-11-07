@@ -4,22 +4,12 @@
 # to calculate a final grade point average for all six courses.
 ############################################
 
-# Student Name: 
+# Student Name: Brayden Creese W0491583
 
-# main() FUNCTION
-def main():
+# did my best with this today, just could not get my brain to work and output stuff today. 
+# Code Does Not Run.
 
-    print("Grade Point Calculator\n")
-    print("Valid letter grades that can be entered: A, B, C, D, F.")
-    print("Valid grade modifiers are +, - or nothing.")
-    print("All letter grades except F can include a + or - symbol.")
-    print("Calculated grade point value cannot exceed 4.0.\n")
-
-    numericGrade = 0.0
-
-    #Gather user inputs
-    letterGrade = input("Please enter a letter grade : ").upper()
-    modifier = input("Please enter a modifier (+, - or nothing) : ")
+def gradeCalc(letterGrade, modifier):
 
     # Determine base numeric value of the grade
     if letterGrade == "A":
@@ -44,8 +34,35 @@ def main():
         if letterGrade != "F":     # Minus is not valid on F
             numericGrade -= 0.3
 
-    # Output final message and result, with formatting
-    print("The numeric value is: {0:.1f}".format(numericGrade))
+    return numericGrade
 
-#PROGRAM EXECUTION STARTS HERE
+gradeCalc()
+
+
+def main():
+
+    courses = ['PROG1700', 'NETW1700', 'OSYS1200', 'WEBD1000', 'COMM1700', 'DBAS1007']
+
+    print("Grade Point Calculator\n")
+    print("Valid letter grades that can be entered: A, B, C, D, F.")
+    print("Valid grade modifiers are +, - or nothing.")
+    print("All letter grades except F can include a + or - symbol.")
+    print("Calculated grade point value cannot exceed 4.0.\n")
+
+    numericGrade = 0.0
+
+    for i in range(6):
+        #Gather user inputs
+        letterGrade = input("Please enter a letter grade: ").upper()
+        modifier = input("Please enter a modifier (+, - or nothing): ")
+
+
+    print("*" * 60)
+    print(f"The numeric value for {courses} is: {0:.1f}".format(numericGrade))
+
+    print("=" * 60)
+    print(f"Your grade point average for the semester is: {0:.1f}".format(averageGrade))
+    print("=" * 60)
+
 main()
+
